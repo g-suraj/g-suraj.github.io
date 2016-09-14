@@ -13,26 +13,49 @@ body {
   #top #Header {
     text-align: center; }
     #top #Header h2 {
-      padding: 1%;
+      padding-top: 1%;
+      margin-bottom: 0px;
       font-weight: 100;
       letter-spacing: 5px;
       font-family: "Times New Roman"; }
+    #top #Header .navlist li {
+      text-align: center;
+      display: inline;
+      list-style-type: none;
+      font-family: "Times New Roman";
+      padding: 0 0.9vw; }
+      #top #Header .navlist li a {
+        letter-spacing: 1px; }
 
 .info-container {
   height: 90%;
   width: 100%;
   border-bottom: thick solid black; }
+  .info-container a {
+    text-decoration: underline;
+    color: #E5D9BE;
+    font-size: 2vw; }
+    @media (max-width: 992px) {
+      .info-container a {
+        font-size: 2.5vh; } }
+    @media (max-width: 767px) {
+      .info-container a {
+        font-size: 3.5vw; } }
+    .info-container a:hover {
+      text-decoration: none;
+      color: pink;
+      text-decoration: underline; }
   .info-container div {
     background-position: center center;
     background-size: cover;
     height: 100%; }
   .info-container #Github {
-    background-image: url(https://drscdn.500px.org/photo/167166399/q%3D80_m%3D2000/1e205c5a160234bb441c25403411b873); }
+    background-image: url(https://drscdn.500px.org/photo/160778223/q%3D80_m%3D2000/6bb62308bff5cfc3cc49127cb3cb7a11); }
     @media (max-width: 767px) {
       .info-container #Github {
         display: none; } }
   .info-container #Suraj {
-    background-image: url(https://drscdn.500px.org/photo/166846905/q%3D80_m%3D2000/9559f2ec95b7f2cd98c365ff67d6fade); }
+    background-image: url(https://drscdn.500px.org/photo/167166399/q%3D80_m%3D2000/1e205c5a160234bb441c25403411b873); }
     .info-container #Suraj #profile {
       max-height: 100%; }
       .info-container #Suraj #profile img {
@@ -49,8 +72,7 @@ body {
         text-align: center;
         font-family: 'Lato', sans-serif;
         font-size: 1.7vw;
-        color: white;
-        font-weight: bold; }
+        color: white; }
         @media (max-width: 767px) {
           .info-container #Suraj #profile #writeup {
             font-size: 2.5vw; } }
@@ -62,21 +84,5 @@ body {
     @media (max-width: 767px) {
       .info-container #photos {
         display: none; } }
-
-a {
-  color: pink;
-  color: #E5D9BE;
-  font-weight: bolder;
-  font-size: 2vw; }
-  @media (max-width: 992px) {
-    a {
-      font-size: 2.5vh; } }
-  @media (max-width: 767px) {
-    a {
-      font-size: 3.5vw; } }
-  a:hover {
-    text-decoration: none;
-    color: pink;
-    text-decoration: underline; }
 
 /*# sourceMappingURL=index.css.map */

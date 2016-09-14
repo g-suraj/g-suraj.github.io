@@ -1,24 +1,30 @@
 html {
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  height: 100%;
+  margin: 0; }
 
-#Header {
-  height: 4rem;
-  text-align: center;
-  padding: 1rem 0;
+body {
+  height: 100%;
+  margin: 0; }
+
+#top {
+  height: 10%;
   background-color: #f0f0f0; }
-  #Header h2 {
-    font-weight: 100;
-    letter-spacing: 5px;
-    font-family: "Times New Roman"; }
+  #top #Header {
+    text-align: center; }
+    #top #Header h2 {
+      font-weight: 100;
+      letter-spacing: 5px;
+      font-family: "Times New Roman"; }
 
 .info-container {
-  background-color: black;
+  height: 90%;
   width: 100%;
   border-bottom: thick solid black; }
   .info-container div {
-    height: 44.9rem;
     background-position: center center;
-    background-size: cover; }
+    background-size: cover;
+    height: 100%; }
   .info-container #Github {
     background-image: url(https://drscdn.500px.org/photo/167166399/q%3D80_m%3D2000/1e205c5a160234bb441c25403411b873); }
   .info-container #Suraj {

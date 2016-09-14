@@ -13,6 +13,7 @@ body {
   #top #Header {
     text-align: center; }
     #top #Header h2 {
+      padding: 1%;
       font-weight: 100;
       letter-spacing: 5px;
       font-family: "Times New Roman"; }

@@ -18,12 +18,12 @@ body {
       display: inline;
       list-style-type: none;
       font-family: "Times New Roman";
-      padding: 0 0.9vw;
-      font-size: 2vh; }
+      padding: 0 0.5vw;
+      font-size: 1vw; }
       @media (max-width: 992px) {
         #top #Header .navlist li {
           letter-spacing: 2.5vw;
-          font-size: 1.5vh; } }
+          font-size: 2vh; } }
       #top #Header .navlist li a {
         letter-spacing: 1px; }
 

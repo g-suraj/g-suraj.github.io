@@ -1,0 +1,21 @@
+body {
+  background-position: center center;
+  background-size: cover;
+  background-image: url(https://drscdn.500px.org/photo/160924579/q%3D80_m%3D2000/5e0e56ea4dc8945156d2d42bc8eee31b);
+  height: 100%; }
+
+.info-container {
+  widows: 100%;
+  height: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  color: white;
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+  font-style: italic;
+  font-size: 2.8vw;
+  font-weight: bold; }
+
+/*# sourceMappingURL=experiments.css.map */

@@ -12,19 +12,20 @@ body {
   background-color: #f0f0f0; }
   #top #Header {
     padding-top: 1vh;
-    text-align: center; }
+    text-align: center;
+    white-space: nowrap; }
     #top #Header .navlist li {
       text-align: center;
       display: inline;
       list-style-type: none;
       font-family: "Times New Roman";
       padding: 0 0.5vw;
-      font-size: 1vw; }
-      @media (max-width: 992px) {
-        #top #Header .navlist li {
-          letter-spacing: 2.5vw;
-          font-size: 2vh; } }
+      font-size: 1.1rem; }
       #top #Header .navlist li a {
         letter-spacing: 1px; }
+
+@media (min-width: 767px) {
+  #topMobile {
+    display: none; } }
 
 /*# sourceMappingURL=common.css.map */

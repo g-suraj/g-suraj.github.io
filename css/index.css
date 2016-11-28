@@ -27,11 +27,11 @@
         text-decoration: none; }
         .info-container #Suraj #profile a:hover {
           text-decoration: underline;
-          color: #E5D9BE; }
+          color: #282828; }
         .info-container #Suraj #profile a h1 {
           margin: 2vw 32vw;
           padding: 18vh 0;
-          color: #E5D9BE;
+          color: #282828;
           font-size: 5vw;
           text-align: center;
           font-weight: bolder;

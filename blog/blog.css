@@ -1,32 +1,51 @@
 body {
-  margin: 10%;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
+  font-size: 2em;
 }
-ul {
-  list-style: none;
+
+.main {
+  position: relative;
+  transform: translateY(-50%);
+  top: 50%;
 }
-.reviewEntry {
-  margin-bottom: 5%;
-  padding-bottom: 5%;
+
+p {
+  /* list-style: none; */
+  padding: 0;
+  margin: 0;
+  /* padding: 10px; */
+  text-align: justify;
+  margin: 1%;
+}
+
+p a {
+  color: black;
   border-bottom: 1px solid #bdbdbd;
 }
-.reviewEntry .image img{
-  max-width:100%;
+
+a:hover {
+  color: black;
+  text-decoration: none;
+  border-bottom: 1px solid #262626;
 }
-.reviewEntry .image{
-  text-align: center;
+
+a:visited {
+  color: black;
+  text-decoration: none;
 }
-.reviewEntry .artistAlbum{
-  text-align: center;
+
+a:active {
+  color: black;
+  text-decoration: none;
 }
-.reviewEntry .review{
+
+a:-webkit-any-link {
+  color: black;
+  text-decoration: none !important;
+}
+
+.heading {
+  border-bottom: 1px solid #282828;
   text-align: left;
-}
-.favTracks {
-  text-align: right;
-}
-.score {
-  text-align: right;
-  font-weight: 500;
 }

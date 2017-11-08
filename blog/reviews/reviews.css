@@ -1,0 +1,35 @@
+body {
+  margin: 10%;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+ul {
+  list-style: none;
+}
+.reviewEntry {
+  margin-bottom: 5%;
+  padding-bottom: 5%;
+  border-bottom: 1px solid #bdbdbd;
+}
+.reviewEntry .image img{
+  max-width:100%;
+}
+.reviewEntry .image{
+  text-align: center;
+}
+.reviewEntry .artistAlbum{
+  text-align: center;
+}
+.reviewEntry .review{
+  text-align: left;
+}
+.favTracks {
+  text-align: right;
+}
+.forFansOf {
+  text-align: right;
+}
+.score {
+  text-align: right;
+  font-weight: 500;
+}

@@ -1,5 +1,22 @@
 [
-  "https://rateyourmusic.com/release/ep/rina-sawayama/rina/",
-  "https://rateyourmusic.com/release/album/aesop-rock/skelethon-1/",
-  "https://rateyourmusic.com/release/album/mahmoud_awad/sheikh_to_the_f_u_t_u_r_e/"
+  [
+    "rina sawayama",
+    "rina",
+    "https://rateyourmusic.com/release/ep/rina-sawayama/rina/"
+  ],
+  [
+    "aesop rock",
+    "skelethon",
+    "https://rateyourmusic.com/release/album/aesop-rock/skelethon/"
+  ],
+  [
+    "mahmoud awad",
+    "sheikh to the f u t u r e",
+    "https://rateyourmusic.com/release/album/mahmoud_awad/sheikh_to_the_f_u_t_u_r_e/"
+  ],
+  [
+    "julien baker",
+    "sprained ankle",
+    "https://rateyourmusic.com/release/album/julien_baker/sprained-ankle/"
+  ]
 ]

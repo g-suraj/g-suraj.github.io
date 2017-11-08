@@ -13,19 +13,12 @@
 </head>
 
 <body class="container">
+    in progress...
 </body>
 
 </html>
 <script>
-    $.getJSON('/blog/list-o-music/list.json', function(data) {
-        var items = [];
-        $.each(data, function(key, val) {
-            items.push("<li id='" + key + "'>" + val + "</li>");
-        });
-
-        $("<ul/>", {
-            "class": "my-new-list",
-            html: items.join("")
-        }).appendTo("body");
+    $.getJSON("/blog/list-o-music/list.json", function(data) {
+        console.log(data)
     });
 </script>

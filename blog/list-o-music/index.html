@@ -14,8 +14,16 @@
 
 <body class="container">
     <ul id="myList">
+        <li id="liHeader"> oh no the list is piling up </li>
+        <div id="entryPt" class="row">
+        </div>
     </ul>
-    </div>
+
+    <!-- <ul id="myList"> -->
+    <!--   <li id="liHeader"> oh no the list is piling up </li> -->
+    <!--   <div class="row"> -->
+    <!--     <li class="col-md-3"><a href="https://rateyourmusic.com/release/ep/rina-sawayama/rina/">rina sawayama - rina</a></li><li class="col-md-3"><a href="https://rateyourmusic.com/release/album/aesop-rock/skelethon/">aesop rock - skelethon</a></li><li class="col-md-3"><a href="https://rateyourmusic.com/release/album/mahmoud_awad/sheikh_to_the_f_u_t_u_r_e/">mahmoud awad - sheikh to the f u t u r e</a></li></ul> -->
+    <!-- </div> -->
 </body>
 
 </html>
@@ -23,7 +31,7 @@
     $.getJSON("/blog/list-o-music/list.json", function(data) {
         $.map(data, function(elem, i) {
             let append = '<li class="col-md-3"><a href="' + elem[2] + '">' + elem[0] + ' - ' + elem[1] + '</a></li>'
-            $("#myList").append(append);
+            $("#entryPt").append(append);
         })
     });
 </script>

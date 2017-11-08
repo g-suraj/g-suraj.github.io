@@ -1,0 +1,51 @@
+body {
+  font-weight: 300;
+  font-size: 2em;
+  font-family: 'Roboto', sans-serif;
+}
+
+ul {
+  list-style: none;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  text-transform: capitalize;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+#liHeader {
+  text-align: left;
+  border-bottom: 1px solid #bdbdbd;
+}
+
+a {
+  color: black;
+  border-bottom: 1px solid #bdbdbd;
+}
+
+a:hover {
+  color: black;
+  text-decoration: none;
+  border-bottom: 1px solid #262626;
+}
+
+a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+a:active {
+  color: black;
+  text-decoration: none;
+}
+
+a:-webkit-any-link {
+  color: black;
+  text-decoration: none !important;
+}
+
+a {
+  font-size: 0.6em;
+}

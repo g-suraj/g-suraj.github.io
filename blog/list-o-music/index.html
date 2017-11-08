@@ -15,13 +15,14 @@
 <body class="container">
     <ul id="myList">
     </ul>
+    </div>
 </body>
 
 </html>
 <script>
     $.getJSON("/blog/list-o-music/list.json", function(data) {
         $.map(data, function(elem, i) {
-            let append = '<li><a href="' + elem[2] + '">' + elem[0] + ' - ' + elem[1] + '</a></li>'
+            let append = '<li class="col-md-3"><a href="' + elem[2] + '">' + elem[0] + ' - ' + elem[1] + '</a></li>'
             $("#myList").append(append);
         })
     });

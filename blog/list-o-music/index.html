@@ -28,10 +28,14 @@
 
 </html>
 <script>
-    $.getJSON("/blog/list-o-music/list.json", function(data) {
+    $.getJSON("https://raw.githubusercontent.com/g-suraj/list-o-music/master/list.json?token=AP9WMA6Iu50h96yDT7pC33Su2SvCNA3Nks5aDNRiwA%3D%3D", function(data) {
+        data.sort()
         $.map(data, function(elem, i) {
-            let append = '<li class="col-md-3"><a href="' + elem[2] + '">' + elem[0] + ' - ' + elem[1] + '</a></li>'
+            let append = '<li class="col-md-3"><a href="' + elem[2] + '">' + elem[0].trim(20) + ' - ' + elem[1].trim(20) + '</a></li>'
             $("#entryPt").append(append);
         })
-    });
+    })
+    String.prototype.trim = function(length) {
+        return this.length > length ? this.substring(0, length) + "..." : this;
+    }
 </script>

@@ -20,7 +20,7 @@ for (var i = 0; i < list.length; i++) {
   }
   let logged = false
   for (let i = 0; i < currentData.length; i++) {
-    if (JSON.stringify(currentData[i]) === JSON.stringify([artist, album, list[i]])) {
+    if (JSON.stringify(currentData[i]) == JSON.stringify([artist, album, list[i]])) {
       logged = true
       break
     }

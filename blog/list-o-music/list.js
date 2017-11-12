@@ -1,5 +1,5 @@
 let fs = require('fs')
-let currentData = require('./list.json')
+let currentData = []
 let list = fs.readFileSync('./list').toString().split('\n')
 let album
 let artist
@@ -17,15 +17,6 @@ for (var i = 0; i < list.length; i++) {
     album = deets[deets.length - 2]
     album = replaceAll(album, '_', ' ')
     album = replaceAll(album, '-', ' ')
-  }
-  let logged = false
-  for (let i = 0; i < currentData.length; i++) {
-    if (JSON.stringify(currentData[i]) == JSON.stringify([artist, album, list[i]])) {
-      logged = true
-      break
-    }
-  }
-  if (!logged) {
     currentData.push([artist, album, list[i]])
   }
 }

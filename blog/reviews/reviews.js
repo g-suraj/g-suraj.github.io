@@ -10,6 +10,6 @@ files.map((file) => {
   }
 })
 reviews.sort((a, b) => {
-  return a[4].split('-').join('') - b[4].split('-').join('')
+  return b[4].split('-').join('') - a[4].split('-').join('')
 })
 fs.writeFileSync(path.join(__dirname, '/reviews.json'), JSON.stringify(reviews, null, 2))

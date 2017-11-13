@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="./reviews.css" />
+<link id="mainStyle" rel="stylesheet" href="./reviews.css" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,700,400italic">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -14,28 +14,26 @@
 </head>
 
 <body class="container">
+    <div class="tAndO">Thoughts and Opinions</div>
     <ul>
-        <div id="entryPt"></div>
+        <div class="loading">
+            Loading . . .
+        </div>
     </ul>
 </body>
 
 </html>
 <script>
-    $(".reviewEntry").addClass('row');
-    $(".details").addClass('col-md-4');
-    $(".review").addClass('col-md-8');
-    $(".forFansOf").prepend('<ul>Similar Artists:</ul> ');
-    $(".favTracks").prepend('<ul>Favourite Tracks:</ul> ');
-
     $.getJSON("/blog/reviews/reviews.json", function(data) {
-        for (var i = 0; i < 2; ++i) {
+        length = Math.min(data.length, 5)
+        var appendage = ''
+        for (var i = 0; i < length; ++i) {
             let curr = data[i]
             let append = '\
-          <li class="reviewEntry">\
-            <div class="details">\
+          <li class="reviewEntry row">\
+            <div class="details col-md-4">\
                 <div class="image">\
-                    <a href="' + curr[0]
-            '+/">\
+                    <a href="' + curr[0] + '">\
             <img src="' + curr[1] + '">\
           </a>\
                 </div>\
@@ -45,14 +43,16 @@
                     <div class="date">' + curr[4] + '</div>\
                 </div>\
             </div>\
-            <div class="review">\
+            <div class="review col-md-8">\
                 <div class="text">' + curr[5] + '</div>\
-                <div class="forFansOf">' + curr[6] + '</div>\
-                <div class="favTracks">' + curr[7] + '</div>\
+                <div class="forFansOf">For Fans of: ' + curr[6] + '</div>\
+                <div class="favTracks">Favourite Tracks: ' + curr[7] + '</div>\
                 <div class="score">' + curr[8] + '</div>\
             </div>\
         </li>'
-            $("#entryPt").append(append);
+            appendage += append
         }
+        $("ul").empty();
+        $("ul").append(appendage);
     })
 </script>

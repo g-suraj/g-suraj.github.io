@@ -27,7 +27,7 @@
     $(".favTracks").prepend('<ul>Favourite Tracks:</ul> ');
 
     $.getJSON("/blog/reviews/reviews.json", function(data) {
-        for (var i = 0; i < 10; ++i) {
+        for (var i = 0; i < 2; ++i) {
             let curr = data[i]
             let append = '\
           <li class="reviewEntry">\

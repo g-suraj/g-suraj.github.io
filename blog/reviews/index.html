@@ -14,7 +14,8 @@
 </head>
 
 <body class="container">
-    <ul id="entryPt">
+    <ul>
+        <div id="entryPty"></div>
     </ul>
 </body>
 
@@ -28,9 +29,7 @@
 
     $.getJSON("/blog/reviews/reviews.json", function(data) {
         for (var i = 0; i < 2; ++i) {
-            console.log('test')
             let curr = data[i]
-            console.log(curr)
             let append = '\
           <li class="reviewEntry">\
             <div class="details">\

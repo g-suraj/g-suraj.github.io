@@ -14,29 +14,7 @@
 </head>
 
 <body class="container">
-    <ul>
-        <li class="reviewEntry">
-            <div class="details">
-                <div class="image">
-                    <a href="https://rateyourmusic.com/release/album/ash-koosha/aktual/">
-            <img src=" https://e.snmc.io/lk/f/l/2f23b5385238e83dafecd701aceae7f6/6729745.jpg" alt="Ash Koosha - AKTUAL">
-          </a>
-                </div>
-                <div class="artistAlbum">
-                    <div class="album">AKTUAL</div>
-                    <div class="artist">Ash Koosha</div>
-                    <div class="date">2017-11-06</div>
-                </div>
-            </div>
-            <div class="review">
-                <div class="text">
-                    Born in Iran and raised in London, beat wizard Ashkan Kooshanejad, better known by his alias Ash Koosha broke into the scene with debut album Guud in 2015. Taking the freneticism of Flying Lotus' signature LA beat sound further, Koosha could do no wrong. Guud was a monolith, dark and brooding, complex and suffocating. Koosha continued this assault on the senses, in a lesser manner on his sophomore LP, I AKA I. On AKTUAL, Koosha is able to channel back some of the earlier energy, while exploring new ground through vocal performances. Koosha manages to hit his highest high with track "TrappistOne", a master stroke in ambient music. However, the inconsistent textures, sounds and ideas do not complement the disjoint nature of this LP, which worked on his previous efforts. The juxtaposition of more complex IDM pieces versus the sombre vocal performances makes AKTUAL feel more like a set of demos, with its highs and lows.
-                </div>
-                <div class="forFansOf">Arca, Holly Herndon, Actress, Crazy Glitchy Beats</div>
-                <div class="favTracks">Magnet, Aktual II, TrappistOne, Aroha</div>
-                <div class="score">3/5</div>
-            </div>
-        </li>
+    <ul id="entryPt">
     </ul>
 </body>
 
@@ -47,4 +25,33 @@
     $(".review").addClass('col-md-8');
     $(".forFansOf").prepend('<ul>Similar Artists:</ul> ');
     $(".favTracks").prepend('<ul>Favourite Tracks:</ul> ');
+
+    $.getJSON("/blog/reviews/reviews.json", function(data) {
+        for (var i = 0; i < 10; ++i) {
+            let curr = data[i]
+            let append = '\
+          <li class="reviewEntry">\
+            <div class="details">\
+                <div class="image">\
+                    <a href="' + curr[0]
+            '+/">\
+            <img src="' + curr[1] + '">\
+          </a>\
+                </div>\
+                <div class="artistAlbum">\
+                    <div class="album">' + curr[2] + '</div>\
+                    <div class="artist">' + curr[3] + '</div>\
+                    <div class="date">' + curr[4] + '</div>\
+                </div>\
+            </div>\
+            <div class="review">\
+                <div class="text">' + curr[5] + '</div>\
+                <div class="forFansOf">' + curr[6] + '</div>\
+                <div class="favTracks">' + curr[7] + '</div>\
+                <div class="score">' + curr[8] + '</div>\
+            </div>\
+        </li>'
+            $("#entryPt").append(append);
+        }
+    })
 </script>

@@ -1,6 +1,6 @@
 let fs = require('fs')
 let currentData = []
-let list = fs.readFileSync('./list').toString().split('\n')
+let list = fs.readFileSync(__dirname + '/list').toString().split('\n')
 let album
 let artist
 
@@ -20,4 +20,4 @@ for (var i = 0; i < list.length; i++) {
     currentData.push([artist, album, list[i]])
   }
 }
-fs.writeFileSync('./list.json', JSON.stringify(currentData, null, 2))
+fs.writeFileSync(__dirname + '/list.json', JSON.stringify(currentData, null, 2))

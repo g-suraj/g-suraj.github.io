@@ -1,0 +1,19 @@
+#!/bin/bash
+echo "Link?"
+read link
+echo "Image Link?"
+read imageLink
+echo "Album?"
+read album
+echo "Artist?"
+read artist
+date=`date +%Y-%m-%d`
+artist_c=${artist//[[:blank:]]/}
+album_c=${album//[[:blank:]]/}
+fn="raw/${artist_c}.${album_c}.review"
+touch $fn
+`echo $link >> $fn`
+`echo $imageLink >> $fn`
+`echo $album >> $fn`
+`echo $artist >> $fn`
+`echo $date >> $fn`

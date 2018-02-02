@@ -46,10 +46,9 @@
 
 </html>
 <script>
-    var lower = 0
-    var data
-    var upper = Math.min(data.length, 5)
-    let maxPage = Math.ceil(data.length / 5)
+    let lower
+    let data
+    let upper
     let load = function() {
         var appendage = ''
         for (var i = lower; i < upper; ++i) {
@@ -102,8 +101,9 @@
         }
     }
     $.getJSON("/blog/reviews/reviews.json", function(x) {
-                data = x
-                load(0, Math.min(data.length, 5))
-            }
-            //})
+        data = x
+        lower = 0
+        upper = Math.min(data.length, 5)
+        load(0, Math.min(data.length, 5))
+    })
 </script>

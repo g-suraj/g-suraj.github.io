@@ -95,6 +95,8 @@
         }
     }
     let right = function() {
+        console.log("RIGHT ")
+        console.log(lower, upper)
         if (upper !== data.length) {
             lower = lower + 5
             upper = Math.min(upper + 5, data.length)

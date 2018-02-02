@@ -3,6 +3,24 @@ body {
   font-weight: 300;
 }
 
+.reviewNav {
+  /* top: 50%; */
+  height: 100vh;
+}
+
+.icon {
+  position: fixed;
+  top: 50%;
+}
+
+#left {
+  font-size: 20px;
+}
+
+#right {
+  font-size: 20px;
+}
+
 ul {
   list-style: none;
 }

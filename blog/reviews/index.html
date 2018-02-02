@@ -14,45 +14,96 @@
 </head>
 
 <body class="container">
-    <div class="tAndO">Thoughts and Opinions</div>
-    <ul>
-        <div class="loading">
-            Loading . . .
+    <div class="row">
+        <a href="#" onclick="left()">
+            <div class="col-xs-1 reviewNav" id="left">
+                <div class="affix">
+                    <div class="icon">
+                        <i class="fa fa-chevron-left"></i>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <div class="col-xs-10">
+            <div class="tAndO">Thoughts and Opinions</div>
+            <ul>
+                <div class="loading">
+                    Loading . . .
+                </div>
+            </ul>
         </div>
-    </ul>
+        <a href="#" onclick="right()">
+            <div class="col-xs-1 reviewNav" id="right">
+                <div class="affix">
+                    <div class="icon">
+                        <i class="fa fa-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
 </body>
 
 </html>
 <script>
-    $.getJSON("/blog/reviews/reviews.json", function(data) {
-        length = Math.min(data.length, 5)
+    var lower = 0
+    var data
+    var upper = Math.min(data.length, 5)
+    let maxPage = Math.ceil(data.length / 5)
+    let load = function() {
         var appendage = ''
-        for (var i = 0; i < length; ++i) {
+        for (var i = lower; i < upper; ++i) {
             let curr = data[i]
             let append = '\
-          <li class="reviewEntry row">\
-            <div class="details col-md-4">\
-                <div class="image">\
-                    <a href="' + curr[0] + '">\
-            <img src="' + curr[1] + '">\
-          </a>\
-                </div>\
-                <div class="artistAlbum">\
-                    <div class="album">' + curr[2] + '</div>\
-                    <div class="artist">' + curr[3] + '</div>\
-                    <div class="date">' + curr[4] + '</div>\
-                </div>\
-            </div>\
-            <div class="review col-md-8">\
-                <div class="text">' + curr[5] + '</div>\
-                <div class="forFansOf">For Fans of: ' + curr[6] + '</div>\
-                <div class="favTracks">Favourite Tracks: ' + curr[7] + '</div>\
-                <div class="score">' + curr[8] + '</div>\
-            </div>\
-        </li>'
+            <li class="reviewEntry row">\
+              <div class="details col-md-4">\
+                  <div class="image">\
+                      <a href="' + curr[0] + '">\
+              <img src="' + curr[1] + '">\
+            </a>\
+                  </div>\
+                  <div class="artistAlbum">\
+                      <div class="album">' + curr[2] + '</div>\
+                      <div class="artist">' + curr[3] + '</div>\
+                      <div class="date">' + curr[4] + '</div>\
+                  </div>\
+              </div>\
+              <div class="review col-md-8">\
+                  <div class="text">' + curr[5] + '</div>\
+                  <div class="forFansOf">For Fans of: ' + curr[6] + '</div>\
+                  <div class="favTracks">Favourite Tracks: ' + curr[7] + '</div>\
+                  <div class="score">' + curr[8] + '</div>\
+              </div>\
+          </li>'
             appendage += append
         }
         $("ul").empty();
         $("ul").append(appendage);
-    })
+    }
+    let left = function() {
+        console.log("LEFTJ")
+        console.log(lower, upper)
+        if (lower !== 0) {
+            lower -= 5;
+            if (upper % 5 === 0) {
+                upper -= 5
+            } else {
+                upper -= (upper % 5)
+            }
+            console.log(lower, upper)
+            load()
+        }
+    }
+    let right = function() {
+        if (upper !== data.length) {
+            lower = lower + 5
+            upper = Math.min(upper + 5, data.length)
+            load()
+        }
+    }
+    $.getJSON("/blog/reviews/reviews.json", function(x) {
+                data = x
+                load(0, Math.min(data.length, 5))
+            }
+            //})
 </script>

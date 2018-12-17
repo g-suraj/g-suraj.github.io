@@ -112,7 +112,8 @@
             load()
         }
     }
-    $.getJSON("/blog/reviews/reviews.json ", function(x) {
+
+    $.getJSON("http://localhost/blog/reviews/reviews.json", function(x) {
         data = x
         lower = 0
         upper = Math.min(data.length, 5)

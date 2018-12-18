@@ -23,7 +23,18 @@
     <title>my reviews</title>
 </head>
 
-<body class="container ">
+<body>
+
+    <div id="filter" class="input-group input-group-sm">
+      <span class="input-group-addon" id="basic-addon1">
+        <span class="glyphicon glyphicon-search"></span>
+      </span>
+      <input type="text" class="form-control" placeholder="Search by Artist / Release / Date">
+    </div>
+
+    <div class="container">
+
+
     <div class="row ">
         <a href="# " onclick="left() ">
             <div class="col-xs-1 reviewNav " id="left ">
@@ -35,13 +46,15 @@
             </div>
         </a>
         <div class="col-xs-10 ">
-            <div class="tAndO ">Thoughts and Opinions</div>
+              <div class="tAndO">Thoughts and Opinions</div>
+
             <ul>
                 <div class="loading ">
                     Loading . . .
                 </div>
             </ul>
         </div>
+
         <a href="# " onclick="right() ">
             <div class="col-xs-1 reviewNav " id="right ">
                 <div class="affix ">
@@ -52,71 +65,24 @@
             </div>
         </a>
     </div>
+
+
+
+    <div>
 </body>
 
 </html>
+<script src="page.js"></script>
 <script>
-    let lower
-    let data
-    let upper
-    let load = function() {
-        var appendage = ''
-        for (var i = lower; i < upper; ++i) {
-            let curr = data[i]
-            let append = '\
-            <li class="reviewEntry row ">\
-              <div class="details col-md-4 ">\
-                  <div class="image ">\
-                      <a href=" ' + curr[0] + ' ">\
-              <img src=" ' + curr[1] + ' ">\
-            </a>\
-                  </div>\
-                  <div class="artistAlbum ">\
-                      <div class="album ">' + curr[2] + '</div>\
-                      <div class="artist ">' + curr[3] + '</div>\
-                      <div class="date ">' + curr[4] + '</div>\
-                  </div>\
-              </div>\
-              <div class="review col-md-8 ">\
-                  <div class="text ">' + curr[5] + '</div>\
-                  <div class="forFansOf ">For Fans of: ' + curr[6] + '</div>\
-                  <div class="favTracks ">Favourite Tracks: ' + curr[7] + '</div>\
-                  <div class="score ">' + curr[8] + '</div>\
-              </div>\
-          </li>'
-            appendage += append
-        }
-        $("ul ").empty();
-        $("ul ").append(appendage);
-    }
-    let left = function() {
-        console.log("LEFTJ ")
-        console.log(lower, upper)
-        if (lower !== 0) {
-            lower -= 5;
-            if (upper % 5 === 0) {
-                upper -= 5
-            } else {
-                upper -= (upper % 5)
-            }
-            console.log(lower, upper)
-            load()
-        }
-    }
-    let right = function() {
-        console.log("RIGHT ")
-        console.log(lower, upper)
-        if (upper !== data.length) {
-            lower = lower + 5
-            upper = Math.min(upper + 5, data.length)
-            load()
-        }
-    }
+$('#filter').on('input', function() {
+  filter($('#filter :input').val())
+});
 
-    $.getJSON("/blog/reviews/reviews.json", function(x) {
-        data = x
-        lower = 0
-        upper = Math.min(data.length, 5)
-        load(0, Math.min(data.length, 5))
-    })
+$.getJSON("/blog/reviews/reviews.json", function(x) {
+    data = x
+    keys = Object.keys(data);
+    length = keys.length
+    reset_bounds()
+    load();
+})
 </script>

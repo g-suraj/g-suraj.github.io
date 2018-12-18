@@ -38,6 +38,7 @@ ul {
 
 .reviewEntry .image {
   text-align: center;
+  border: 1px dotted #bdbdbd;
 }
 
 .reviewEntry .artistAlbum {
@@ -54,7 +55,7 @@ ul {
 }
 
 .text {
-  margin: 5vh;
+  margin: 2vh;
 }
 
 .favTracks {
@@ -79,4 +80,18 @@ ul {
 
 .loading {
   text-align: center;
+}
+
+#filter {
+  z-index: 100;
+  width:20%;
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  border-color: 1px solid #bdbdbd;
+}
+
+#filter :focus{
+  border: 1px solid #bdbdbd;
+  box-shadow: none;
 }

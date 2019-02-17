@@ -15,13 +15,11 @@ for root, dirs, files in os.walk(path):
 for filename in target_files:
     review = open(filename, 'r').read().split("\n")
     key = review[0]
-    if(key in reviews):
-        break
     reviews[key] = review
 
-if len(reviews) == init:
-    print("No new reviews added. Exiting")
-    sys.exit(0)
+# if len(target_files) == init:
+#     print("No new reviews added. Exiting")
+#     sys.exit(0)
 
 # Reverse sort by date
 

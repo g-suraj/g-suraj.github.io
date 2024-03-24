@@ -25,6 +25,12 @@ export default {
         brown: "#ab7967",
         base0F: "#ab7967",
       },
+      height: {
+        "20vh": "20vh",
+      },
+      width: {
+        "20vh": "20vh",
+      },
     },
   },
   plugins: [],

@@ -34,21 +34,17 @@ const links = [
 
 <html>
   <body class="bg-base00 flex h-dvh">
-    <div class="m-auto w-4/5 sm:w-2/3 lg:w-1/3">
+    <div class="m-auto w-11/12 lg:w-2/4">
       <div class="mx-auto my-10">
         <Bubble index="-1">
           <div class="flex flex-row items-center">
             <img
-              class="flex-basis-3 h-36 w-36 border-4 border-base0C rounded-full"
+              class="flex-basis-3 h-20vh w-20vh border-4 border-base0C rounded-full"
               src="/me.png"
               alt="It's me"
             />
             <div class="flex-grow mx-8">
-              <div class="text-lg my-1">Hi, I'm Suraj</div>
-              <div class="text-xs">
-                I'm a Senior Software Engineer at Bloomberg, working on making
-                Developers more productive.
-              </div>
+              <div class="text-6xl my-1">Hi, I'm Suraj</div>
             </div>
           </div>
         </Bubble>
@@ -59,7 +55,9 @@ const links = [
           links.map((link, index) => {
             return (
               <Bubble index={index} link={link["link"]} border={link["border"]}>
-                <i class:list={["fa", link["icon"]]} /> {link["name"]}
+                <div class="text-4xl lg:text-xl">
+                  <i class:list={["fa", link["icon"]]} /> {link["name"]}
+                </div>
               </Bubble>
             );
           })

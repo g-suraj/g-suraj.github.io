@@ -1,0 +1,27 @@
+---
+const { index, link, border } = Astro.props;
+---
+
+<a href={link} target="_blank">
+  {
+    (
+      <div
+        id={index}
+        class:list={[
+          "bubble",
+          "bg-base-01",
+          "text-base06",
+          "border-4",
+          "rounded-xl",
+          "text-sm",
+          "h-fill",
+          border || "border-base0A",
+        ]}
+      >
+        <div class="p-4">
+          <slot />
+        </div>
+      </div>
+    )
+  }
+</a>

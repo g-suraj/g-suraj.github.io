@@ -8,6 +8,12 @@ body {
   min-height: 100dvh;
   margin: 0;
   place-items: center;
+  cursor: url("cursor.svg") 10 1, pointer;
+}
+
+a,
+button {
+  cursor: url("cursor.svg") 10 1, pointer;
 }
 
 main {
